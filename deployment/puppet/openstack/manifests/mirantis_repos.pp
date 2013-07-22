@@ -123,6 +123,13 @@ class openstack::mirantis_repos (
         proxy   => $repo_proxy,
       }
 
+      yumrepo { 'ceph':
+          baseurl   => 'http://ceph.com/rpm-cuttlefish/el6/SRPMS',
+          gpgcheck   => '1',
+          gpgkey     => 'http://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc',
+          enabled => '1',
+        }
+
       # added internal (custom)/external (default) network mirror
       if $type == 'default' {
 
