@@ -124,7 +124,7 @@ class openstack::mirantis_repos (
       }
 
       yumrepo { 'ceph':
-          baseurl   => 'http://ceph.com/rpm-cuttlefish/el6/noarch',
+          baseurl   => 'http://ceph.com/rpm-cuttlefish/el6/$basearch',
           gpgcheck   => '1',
           gpgkey     => 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc',
           enabled => '1',
